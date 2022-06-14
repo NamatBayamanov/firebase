@@ -1,0 +1,10 @@
+.Todo {
+  background-color: red;
+  color: blue;
+  & .item_text {
+    color: blueviolet;
+  }
+  & .strike {
+    text-decoration: line-through;
+  }
+} 
