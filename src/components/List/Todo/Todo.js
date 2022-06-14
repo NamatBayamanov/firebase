@@ -8,7 +8,7 @@ function Todo({ currentValue, onRemoveTask, onToggleTask }) {
         onClick={() => onToggleTask(currentValue.id)}
       >
         {currentValue.task}
-      </div> <button onClick={() => onRemoveTask(currentValue.id)}>X</button>
+      </div> <button onClick={ () => onRemoveTask(currentValue.id)}>X</button>
     </div>
   );
 }
