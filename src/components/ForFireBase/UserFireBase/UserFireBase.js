@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-import classes from "./Todoform.module.scss";
-
-
-
-function Todoform({onAddTask}) {
-
+import classes from "./UserFireBase.module.scss";
+function UserFireBase({onAddTask}) {
   const [userInput, setUserInput] = useState("");
 
 
@@ -39,7 +35,7 @@ function Todoform({onAddTask}) {
   }
 
   return ( 
-    <div className={classes.Todoform}>
+    <div className={classes.UserFireBase}>
       <form onSubmit={onSubmitChange}>
         <input type="text" value={userInput} onChange={onChange} onKeyDown={onKeyDown}/>
         <button>Send</button>
@@ -49,4 +45,4 @@ function Todoform({onAddTask}) {
   );
 }
 
-export default Todoform;
+export default UserFireBase;

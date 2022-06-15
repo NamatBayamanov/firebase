@@ -1,9 +1,9 @@
-import classes from "./Todo.module.scss";
+import classes from "./Functional.module.scss";
 
-function Todo({ currentValue, onRemoveTask, onToggleTask }) {
-  
+
+function Functional({ currentValue, onRemoveTask, onToggleTask}) {
   return (
-    <div className={classes.Todo}>
+    <div className={classes.Functional}>
       <div
         className={currentValue.complete ? `${classes.item_text} ${classes.strike}` : `${classes.item_text}`}
         onClick={() => onToggleTask(currentValue.id)}
@@ -15,4 +15,4 @@ function Todo({ currentValue, onRemoveTask, onToggleTask }) {
   );
 }
 
-export default Todo;
+export default Functional;

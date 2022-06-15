@@ -1,10 +1,8 @@
 import { useState } from "react";
-import classes from "./List.module.scss";
-import Todo from "./Todo/Todo";
-import Todoform from "./Todoform/Todoform";
+import Functional from "./Functional/Functional";
+import UserFireBase from "./UserFireBase/UserFireBase";
 
-
-function List() {
+function ForFireBase() {
   const [todos, setTodos] = useState([]);
 
   const onAddTask = (userInput) => {
@@ -26,20 +24,20 @@ function List() {
     setTodos([...todos.map((currentValue, index, arr) => currentValue.id === id ? {...currentValue, complete: !currentValue.complete } : {...currentValue} )]);
   }
   return (
-    <div className={classes.List}>
+    <div className="ForFireBase">
 
       <h2>
         List of task: {todos.length}
       </h2>
       
-      <Todoform onAddTask={onAddTask}/>
+      <UserFireBase onAddTask={onAddTask}/>
       {todos.map((currentValue, index, arr) => {
         return (
-          <Todo key={currentValue.id} currentValue={currentValue} onRemoveTask={onRemoveTask} onToggleTask={onToggleTask}/>
+          <Functional key={currentValue.id} currentValue={currentValue} onRemoveTask={onRemoveTask} onToggleTask={onToggleTask}/>
         );
       })}
     </div>
   );
 }
 
-export default List;
+export default ForFireBase;
