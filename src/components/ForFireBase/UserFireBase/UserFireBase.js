@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import classes from "./UserFireBase.module.scss";
 function UserFireBase({onAddTask}) {
@@ -16,10 +17,19 @@ function UserFireBase({onAddTask}) {
   } 
 
   const onSubmitChange = (event) => {
+
+    const formData = new FormData(event.target)
     return (
       event.preventDefault(),
+      
+      axios.post("https://crud-ca650-default-rtdb.firebaseio.com/todolist.json", Object.fromEntries(formData.entries())),
+      
       onAddTask(userInput),
+
       setUserInput("")
+
+
+      
     );
   }
   
@@ -37,7 +47,7 @@ function UserFireBase({onAddTask}) {
   return ( 
     <div className={classes.UserFireBase}>
       <form onSubmit={onSubmitChange}>
-        <input type="text" value={userInput} onChange={onChange} onKeyDown={onKeyDown}/>
+        <input type="text" value={userInput} onChange={onChange} onKeyDown={onKeyDown} name="task"/>
         <button>Send</button>
       </form>
       <button onClick={onClearTask}>Clear task</button>

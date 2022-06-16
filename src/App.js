@@ -11,7 +11,7 @@ function App() {
       {/* <List /> */}
       {/* <LocalStorages/> */}
 
-      {/* <Form /> */}
+      
       <Submit/>
       <FromFireBase/>
 
